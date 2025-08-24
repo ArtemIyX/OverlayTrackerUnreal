@@ -99,10 +99,5 @@ FVector UMyTrackerObj::GetObjectWorldLocation_Implementation()
     Subsystem->RemoveObject("Enemy_42");
    ```cpp
 
-## Tips
-Performance is O(n) every frame; keep n reasonable.
-
-Multiple cameras? Override GetCameraLocRot in your canvas widget to pick the desired camera.
-
 ## Support
 Open an issue on GitHub
