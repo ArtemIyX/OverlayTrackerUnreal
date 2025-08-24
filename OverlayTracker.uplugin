@@ -1,0 +1,24 @@
+{
+	"FileVersion": 3,
+	"Version": 1,
+	"VersionName": "1.0",
+	"FriendlyName": "OverlayTracker",
+	"Description": "Allows developers to draw 2d widgets on the screen by projecting their position from 3d space. Suitable for nicknames, debug information, dev tools",
+	"Category": "Other",
+	"CreatedBy": "Wellsaik",
+	"CreatedByURL": "https://github.com/ArtemIyX/",
+	"DocsURL": "",
+	"MarketplaceURL": "",
+	"SupportURL": "",
+	"CanContainContent": true,
+	"IsBetaVersion": false,
+	"IsExperimentalVersion": false,
+	"Installed": false,
+	"Modules": [
+		{
+			"Name": "OverlayTracker",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
+}
