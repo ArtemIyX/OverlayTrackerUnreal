@@ -16,7 +16,7 @@ bool UOverlayTrackerCanvasWidget::ProjectToScreen(UOverlayTrackerObject* InTrack
 {
 	const FVector objLoc = InTrackerObject->GetObjectWorldLocation();
 	FVector2D screenPos;
-	bool bProjected = UWidgetLayoutLibrary::ProjectWorldLocationToWidgetPosition(GetOwningPlayer(),
+	const bool bProjected = UWidgetLayoutLibrary::ProjectWorldLocationToWidgetPosition(GetOwningPlayer(),
 		objLoc, screenPos, false);
 
 	OutScreenPos = screenPos;
@@ -32,11 +32,11 @@ void UOverlayTrackerCanvasWidget::NativeTick(const FGeometry& MyGeometry, float 
 void UOverlayTrackerCanvasWidget::NativeConstruct()
 {
 	Super::NativeConstruct();
-	if (auto pc = GetOwningPlayer())
+	if (APlayerController* pc = GetOwningPlayer())
 	{
-		if (auto world = pc->GetWorld())
+		if (UWorld* world = pc->GetWorld())
 		{
-			if (auto subsystem = world->GetSubsystem<UOverlayTrackerSubsystem>())
+			if (UOverlayTrackerSubsystem* subsystem = world->GetSubsystem<UOverlayTrackerSubsystem>())
 			{
 				OverlayTrackerSubsystem = subsystem;
 				OverlayTrackerSubsystem->CacheCanvasWidget(this);
@@ -95,7 +95,7 @@ void UOverlayTrackerCanvasWidget::UpdatePosition_Implementation(const FString& I
 	}
 
 	// Update size
-	FVector2D size = InTrackerObject->GetSize(FVector::Distance(InTrackerObject->GetObjectWorldLocation(), camLoc));
+	const FVector2D size = InTrackerObject->GetSize(FVector::Distance(InTrackerObject->GetObjectWorldLocation(), camLoc));
 	if (slot->GetSize() != size)
 	{
 		slot->SetSize(size);

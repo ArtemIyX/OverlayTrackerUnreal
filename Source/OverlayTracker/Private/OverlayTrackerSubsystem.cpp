@@ -51,18 +51,18 @@ void UOverlayTrackerSubsystem::RemoveObject(const FString& InUID)
 
 UOverlayTrackerObject* UOverlayTrackerSubsystem::GetObject(const FString& InUID)
 {
-	auto itemPtr = SavedWidgetObjects.Find(InUID);
+	UOverlayTrackerObject** itemPtr = SavedWidgetObjects.Find(InUID);
 	if (itemPtr == nullptr)
 	{
 		return nullptr;
 	}
-	auto object = *itemPtr;
-	return object;
+	UOverlayTrackerObject* item = *itemPtr;
+	return item;
 }
 
 void UOverlayTrackerSubsystem::ClearMap()
 {
-	for (auto el : SavedWidgetObjects)
+	for (const TTuple<FString, UOverlayTrackerObject*>& el : SavedWidgetObjects)
 	{
 		if (IsValid(el.Value))
 		{

@@ -1,7 +1,7 @@
 {
 	"FileVersion": 3,
 	"Version": 1,
-	"VersionName": "1.0",
+	"VersionName": "1.1",
 	"FriendlyName": "OverlayTracker",
 	"Description": "Allows developers to draw 2d widgets on the screen by projecting their position from 3d space. Suitable for nicknames, debug information, dev tools",
 	"Category": "Other",
@@ -9,7 +9,7 @@
 	"CreatedByURL": "https://github.com/ArtemIyX/",
 	"DocsURL": "",
 	"MarketplaceURL": "",
-	"SupportURL": "",
+	"SupportURL": "https://github.com/ArtemIyX/OverlayTrackerUnreal",
 	"CanContainContent": true,
 	"IsBetaVersion": false,
 	"IsExperimentalVersion": false,
